@@ -1,0 +1,156 @@
+version: "3.3"
+
+services:
+  csat-tableau:
+    image: csat-tableau
+    container_name: csat-tableau
+    build:
+      context: .
+      dockerfile: ./Dockerfile.tableau
+      target: local
+      args:
+        - "SERVICE_NAME=csat-tableau"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+    environment:
+      ENVIRONMENT: local
+    depends_on:
+      - csat-init
+    volumes:
+      - ./tableau:/usr/src/app/src/static/data/tableau
+    env_file:
+      - ./.env.docker
+
+  csat-report:
+    image: csat-report
+    container_name: csat-report
+    build:
+      context: .
+      dockerfile: ./Dockerfile.report
+      target: local
+      args:
+        - "SERVICE_NAME=csat-report"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+    environment:
+      ENVIRONMENT: local
+    depends_on:
+      - csat-init
+    volumes:
+      - ./tableau:/usr/src/app/src/static/data/tableau
+      - ./reports:/usr/src/app/src/static/data/reports
+      - ./reports_by_chain:/usr/src/app/src/static/data/reports_by_chain
+      - ./reports_score:/usr/src/app/src/static/data/reports_score
+    env_file:
+      - ./.env.docker
+
+  tac-server:
+    image: tac-server
+    container_name: tac-server
+    build:
+      context: .
+      dockerfile: ./Dockerfile.server
+      target: local
+      args:
+        - "SERVICE_NAME=tac-server"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+    ports:
+      - 3000:3000
+    environment:
+      ENVIRONMENT: local
+    depends_on:
+      - csat-init
+      - mongodb_container
+    env_file:
+      - ./.env.docker
+
+  tac-client:
+    image: tac-client
+    container_name: tac-client
+    build:
+      context: .
+      dockerfile: ./Dockerfile.client
+      target: local
+      args:
+        - "SERVICE_NAME=tac-client"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+    ports:
+      - 8080:8080
+    environment:
+      ENVIRONMENT: local
+    depends_on:
+      - csat-init
+      - tac-server
+      - mongodb_container
+    env_file:
+      - ./.env.docker
+
+  mongodb_container:
+    image: mongo:latest
+    ports:
+      - 27018:27017
+    volumes:
+      - mongodb_data_container:/data/db
+
+  # Loads the historical CSV data
+  #
+  mongodb-loader:
+    image: mongodb-loader
+    depends_on:
+      - mongodb_container
+      - csat-init
+    build:
+      context: .
+      dockerfile: ./Dockerfile.loader
+      target: local
+      args:
+        - "SERVICE_NAME=mongodb-loader"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+
+  # Joins the TAC data and loads mongo CallsWithTicketsAll
+  tac-loader:
+    image: tac-loader
+    depends_on:
+      - mongodb_container
+      - csat-init
+    build:
+      context: .
+      dockerfile: ./Dockerfile.tacloader
+      target: local
+      args:
+        - "SERVICE_NAME=tac-loader"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+
+  # IMPORTANT! Required to set the correct, non-root permissions for all output folders under volumes
+  #
+  csat-init:
+    image: csat-init
+    container_name: csat-init
+    build:
+      context: .
+      dockerfile: ./Dockerfile.init
+      target: csat-init
+      args:
+        - "SERVICE_NAME=csat-init"
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+    environment:
+      ENVIRONMENT: local
+    volumes:
+      - ./tableau:/usr/src/app/src/static/data/tableau
+      - ./reports:/usr/src/app/src/static/data/reports
+      - ./reports_by_chain:/usr/src/app/src/static/data/reports_by_chain
+      - ./reports_score:/usr/src/app/src/static/data/reports_score
+
+    env_file:
+      - ./.env.docker
+
+volumes:
+  mongodb_data_container:
+networks:
+  default:
+    name: dtmo_net

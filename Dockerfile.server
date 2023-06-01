@@ -1,0 +1,45 @@
+# Specify needing NODE
+#
+# FROM node:latest
+# the "...as local" allows multi-stage builds; see also docker-compose file
+#
+FROM node:16.17.0-bullseye-slim AS local
+
+WORKDIR /usr/src/app
+
+# Bundle the app's source
+# Note that .dockerignore will specify non-copied dirs.
+#
+COPY package*.json ./
+COPY . .
+
+# Use docker mongodb endpoints, etc.
+#
+COPY .env.docker .env
+
+# Create a non-root user
+#
+ARG UID=1001
+ARG GID=1001
+RUN groupadd -g "${GID}" pptruser \
+  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" pptruser \
+  && mkdir -p /home/pptruser/Downloads \
+  && chown -R pptruser:pptruser /home/pptruser \
+  && chown -R pptruser:pptruser .
+
+# Run everything after as non-privileged user.
+USER pptruser
+
+RUN npm install
+
+# Generate prisma ORM
+#
+RUN npx prisma generate
+
+# Expose express port
+#
+EXPOSE 3000
+
+# Start the server
+#
+CMD [ "npm", "run", "server" ]

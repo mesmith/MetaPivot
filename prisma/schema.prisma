@@ -1,0 +1,1696 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+type AbandonedCallsFy19Q1Conf {
+  ID String @map(" ID")
+}
+
+type AbandonedCallsFy19Q1Seq {
+  ID String @map(" ID")
+}
+
+type AisSoloMetricsCambridgePe {
+  dpi              Float?
+  lowerQuartileIRR Float?
+  medianIRR        Float?
+  rvpi             Float?
+  upperQuartileIRR Float?
+  vintage          Int?
+}
+
+type AisSoloMetricsCambridgeVc {
+  /// Multiple data types found: Float: 90.5%, Int: 9.5% out of 155 sampled entries
+  dpi              Json?
+  lowerQuartileIRR Float?
+  medianIRR        Float?
+  rvpi             Float?
+  upperQuartileIRR Float?
+  vintage          Int?
+}
+
+type AisSoloMetricsPreqinPe {
+  /// Multiple data types found: Float: 62.5%, Int: 37.5% out of 155 sampled entries
+  dpi              Json?
+  /// Multiple data types found: String: 37.5%, Float: 62.5% out of 155 sampled entries
+  lowerQuartileIRR Json?
+  /// Multiple data types found: String: 37.5%, Float: 62.5% out of 155 sampled entries
+  medianIRR        Json?
+  /// Multiple data types found: Float: 89.5%, Int: 10.5% out of 155 sampled entries
+  rvpi             Json?
+  /// Multiple data types found: String: 37.5%, Float: 62.5% out of 155 sampled entries
+  upperQuartileIRR Json?
+  vintage          Int?
+}
+
+type AisSoloMetricsPreqinVc {
+  /// Multiple data types found: Float: 69.1%, Int: 30.9% out of 155 sampled entries
+  dpi              Json?
+  /// Multiple data types found: String: 37.5%, Float: 62.5% out of 155 sampled entries
+  lowerQuartileIRR Json?
+  /// Multiple data types found: String: 37.5%, Float: 62.5% out of 155 sampled entries
+  medianIRR        Json?
+  /// Multiple data types found: Float: 77%, Int: 23% out of 155 sampled entries
+  rvpi             Json?
+  /// Multiple data types found: String: 37.5%, Float: 62.5% out of 155 sampled entries
+  upperQuartileIRR Json?
+  vintage          Int?
+}
+
+type AisSoloMetricsSp500 {
+  medianIRR Float
+  price     Float
+  vintage   String
+  yield     Float
+}
+
+type AisSoloMetricsXFlows {
+  Calls            String
+  Date             String
+  Distributions    String
+  Entity           String
+  Notes            String
+  Other_Inflow     String @map("Other Inflow")
+  Other_Outflow    String @map("Other Outflow")
+  Transaction_Type String @map("Transaction Type")
+  /// Multiple data types found: Float: 1.9%, Int: 98.1% out of 10113 sampled entries
+  xCall            Json
+  /// Multiple data types found: Float: 3.8%, Int: 96.2% out of 10113 sampled entries
+  xDistribution    Json
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xNav             Json?
+  /// Multiple data types found: Float: 94.5%, Int: 5.5% out of 10113 sampled entries
+  xSPYdividend     Json
+  /// Multiple data types found: Float: 98.8%, Int: 1.2% out of 10113 sampled entries
+  xSPYprice        Json
+  /// Multiple data types found: Float: 12.8%, Int: 87.2% out of 10113 sampled entries
+  xSPYshares       Json
+  xSPYyield        Float
+}
+
+type ConnectedCallsFy19Q1Conf {
+  ID String @map(" ID")
+}
+
+type ConnectedCallsFy19Q1Seq {
+  ID String @map(" ID")
+}
+
+type PreqinVcPooledIrr31Dec2018No {
+  of_Funds__Pooled_ String @map(" of Funds (Pooled)")
+}
+
+model AEMedraComparison {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+}
+
+model AEMedraComparison_large {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+
+  @@map("AEMedraComparison-large")
+}
+
+model AEMedraComparison444 {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+}
+
+model AIS_Benchmarks_MKT {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  Barclays_MKT  String @map("Barclays MKT")
+  HFRX_MKT      String @map("HFRX MKT")
+  HPI_MKT       String @map("HPI MKT")
+  Index_        String @map("Index:")
+  S_P_US_HY_MKT String @map("S&P US HY MKT")
+  S_P500_MKT    String @map("S&P500 MKT")
+  field10       String
+  field11       String
+  field12       String
+  field13       String
+  field15       String
+  field16       String
+  field17       String
+  field19       String
+  field20       String
+  field21       String
+  field23       String
+  field24       String
+  field25       String
+  field3        String
+  field4        String
+  field5        String
+  field6        String
+  field7        String
+  field8        String
+}
+
+model AIS_Benchmarks_PE {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2000 String @map("2000")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2001 String @map("2001")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2002 String @map("2002")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2003 String @map("2003")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2004 String @map("2004")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2005 String @map("2005")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2006 String @map("2006")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2007 String @map("2007")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2008 String @map("2008")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2009 String @map("2009")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2010 String @map("2010")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2011 String @map("2011")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2012 String @map("2012")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2013 String @map("2013")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2014 String @map("2014")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2015 String @map("2015")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2016 String @map("2016")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2017 String @map("2017")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 2018 String @map("2018")
+  Quarter___Vintage String @map("Quarter \\ Vintage")
+  field21           String
+  field41           String
+  field61           String
+}
+
+model AIS_Entities {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  Benchmark_1     String @map("Benchmark 1")
+  Benchmark_2     String @map("Benchmark 2")
+  Calls_Next_12   String @map("Calls Next 12")
+  Calls_Next_6    String @map("Calls Next 6")
+  Carry           String
+  Cash_on_Hand    String @map("Cash on Hand")
+  Commitment      String
+  Dist_Next_12    String @map("Dist Next 12")
+  Dist_Next_6     String @map("Dist Next 6")
+  Exit_Date       String @map("Exit Date")
+  Fund_Size       String @map("Fund Size")
+  GP_Commitment   String @map("GP Commitment")
+  ID              String
+  Inception_Date  String @map("Inception Date")
+  Investment_Type String @map("Investment Type")
+  Investor_Site   String @map("Investor Site")
+  KNC_Google_Site String @map("KNC Google Site")
+  Las_NAV_Date    String @map("Las NAV Date")
+  Last_NAV        String @map("Last NAV")
+  Lock_Up         String @map("Lock Up")
+  Mgmt_Fee        String @map("Mgmt Fee")
+  Name            String
+  Notes           String
+  PW              String
+  Period          String
+  Phase           String
+  Proj_Eff_Date   String @map("Proj Eff Date")
+  Status          String
+  Username        String
+  field30         String
+  field31         String
+  field32         String
+  field33         String
+  field34         String
+  field35         String
+  field36         String
+  field37         String
+  field38         String
+  field39         String
+  field40         String
+  field41         String
+  field42         String
+  field43         String
+  field44         String
+  field45         String
+  field46         String
+  field47         String
+  field48         String
+  field49         String
+  field50         String
+  field51         String
+  field52         String
+  field53         String
+  field54         String
+  field55         String
+  field56         String
+  field57         String
+  field58         String
+  field59         String
+  field60         String
+}
+
+model AIS_Flows {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  Calls            String
+  Date             String
+  Distributions    String
+  Entity           String
+  Notes            String
+  Other_Inflow     String @map("Other Inflow")
+  Other_Outflow    String @map("Other Outflow")
+  Transaction_Type String @map("Transaction Type")
+}
+
+model AIS_Nav {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2002 String @map("03/31/2002")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2003 String @map("03/31/2003")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2004 String @map("03/31/2004")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2005 String @map("03/31/2005")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2006 String @map("03/31/2006")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2007 String @map("03/31/2007")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2008 String @map("03/31/2008")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2009 String @map("03/31/2009")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2010 String @map("03/31/2010")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2011 String @map("03/31/2011")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2012 String @map("03/31/2012")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2013 String @map("03/31/2013")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2014 String @map("03/31/2014")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2015 String @map("03/31/2015")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2016 String @map("03/31/2016")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2017 String @map("03/31/2017")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2018 String @map("03/31/2018")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2019 String @map("03/31/2019")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2020 String @map("03/31/2020")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2021 String @map("03/31/2021")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2022 String @map("03/31/2022")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2023 String @map("03/31/2023")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2024 String @map("03/31/2024")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2025 String @map("03/31/2025")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2026 String @map("03/31/2026")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 03/31/2027 String @map("03/31/2027")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2002 String @map("06/30/2002")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2003 String @map("06/30/2003")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2004 String @map("06/30/2004")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2005 String @map("06/30/2005")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2006 String @map("06/30/2006")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2007 String @map("06/30/2007")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2008 String @map("06/30/2008")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2009 String @map("06/30/2009")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2010 String @map("06/30/2010")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2011 String @map("06/30/2011")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2012 String @map("06/30/2012")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2013 String @map("06/30/2013")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2014 String @map("06/30/2014")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2015 String @map("06/30/2015")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2016 String @map("06/30/2016")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2017 String @map("06/30/2017")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2018 String @map("06/30/2018")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2019 String @map("06/30/2019")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2020 String @map("06/30/2020")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2021 String @map("06/30/2021")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2022 String @map("06/30/2022")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2023 String @map("06/30/2023")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2024 String @map("06/30/2024")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2025 String @map("06/30/2025")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2026 String @map("06/30/2026")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 06/30/2027 String @map("06/30/2027")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2001 String @map("09/30/2001")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2002 String @map("09/30/2002")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2003 String @map("09/30/2003")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2004 String @map("09/30/2004")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2005 String @map("09/30/2005")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2006 String @map("09/30/2006")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2007 String @map("09/30/2007")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2008 String @map("09/30/2008")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2009 String @map("09/30/2009")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2010 String @map("09/30/2010")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2011 String @map("09/30/2011")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2012 String @map("09/30/2012")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2013 String @map("09/30/2013")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2014 String @map("09/30/2014")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2015 String @map("09/30/2015")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2016 String @map("09/30/2016")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2017 String @map("09/30/2017")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2018 String @map("09/30/2018")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2019 String @map("09/30/2019")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2020 String @map("09/30/2020")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2021 String @map("09/30/2021")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2022 String @map("09/30/2022")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2023 String @map("09/30/2023")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2024 String @map("09/30/2024")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2025 String @map("09/30/2025")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2026 String @map("09/30/2026")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 09/30/2027 String @map("09/30/2027")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2001 String @map("12/31/2001")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2002 String @map("12/31/2002")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2003 String @map("12/31/2003")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2004 String @map("12/31/2004")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2005 String @map("12/31/2005")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2006 String @map("12/31/2006")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2007 String @map("12/31/2007")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2008 String @map("12/31/2008")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2009 String @map("12/31/2009")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2010 String @map("12/31/2010")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2011 String @map("12/31/2011")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2012 String @map("12/31/2012")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2013 String @map("12/31/2013")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2014 String @map("12/31/2014")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2015 String @map("12/31/2015")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2016 String @map("12/31/2016")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2017 String @map("12/31/2017")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2018 String @map("12/31/2018")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2019 String @map("12/31/2019")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2020 String @map("12/31/2020")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2021 String @map("12/31/2021")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2022 String @map("12/31/2022")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2023 String @map("12/31/2023")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2024 String @map("12/31/2024")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2025 String @map("12/31/2025")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2026 String @map("12/31/2026")
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // 12/31/2027 String @map("12/31/2027")
+  ID   String
+  Name String
+}
+
+model AIS_SubEntities {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  Curr_Cost   String @map("Curr Cost")
+  Curr_FV     String @map("Curr FV")
+  Description String
+  Exchange    String
+  ID          String
+  Industry    String
+  Invest_Date String @map("Invest Date")
+  Last_Cost   String @map("Last Cost")
+  Last_FV     String @map("Last FV")
+  Name        String
+  Ticker      String
+}
+
+model AIS_solo_metrics {
+  id                        String                    @id @default(auto()) @map("_id") @db.ObjectId
+  CambridgePE               AisSoloMetricsCambridgePe
+  CambridgeVC               AisSoloMetricsCambridgeVc
+  Entity                    String
+  PreqinPE                  AisSoloMetricsPreqinPe
+  PreqinVC                  AisSoloMetricsPreqinVc
+  SP500                     AisSoloMetricsSp500
+  xBenchmark1               String
+  xCommitment               Int
+  xCommitmentBin            String
+  /// Multiple data types found: Float: 21.3%, Int: 78.7% out of 155 sampled entries
+  xCumDistribution          Json
+  xEntityCommitmentDecile   String
+  xEntityDistributionDecile String
+  /// Multiple data types found: String: 0.6%, Float: 47.7%, Int: 51.6% out of 155 sampled entries
+  xEntityIRR                Json
+  xEntityIRRDecile          String
+  xFlows                    AisSoloMetricsXFlows[]
+  xInvestmentType           String
+  xLastNavDate              String?
+  xName                     String
+  xNav                      Int
+  /// Multiple data types found: Float: 21.9%, Int: 78.1% out of 155 sampled entries
+  xPIC                      Json
+  xPhase                    String
+  xStatus                   String
+}
+
+model Abandoned_Calls_FY19_Q1 {
+  id                String                   @id @default(auto()) @map("_id") @db.ObjectId
+  Acct_Code         String                   @map("Acct Code")
+  Callee_Department String                   @map("Callee Department")
+  Caller_Department String                   @map("Caller Department")
+  Caller_ID         String                   @map("Caller ID")
+  Caller_Name       String                   @map("Caller Name")
+  Conf              AbandonedCallsFy19Q1Conf
+  DNIS              String
+  Date              String
+  Duration          String
+  Exit_State        String                   @map("Exit State")
+  ID                String
+  IVR_Data          String                   @map("IVR Data")
+  Message_Duration  String                   @map("Message Duration")
+  Others_Time       String                   @map("Others Time")
+  Seq               AbandonedCallsFy19Q1Seq
+  Session_ID        String                   @map("Session ID")
+  Talk_Time         String                   @map("Talk Time")
+  Target_ID         String                   @map("Target ID")
+  Target_Name       String                   @map("Target Name")
+  Time              String
+  URL               String
+  User_Data         String                   @map("User Data")
+  Wait_Time         String                   @map("Wait Time")
+
+  @@map("Abandoned Calls FY19 Q1")
+}
+
+model CallsWithTickets {
+  id                               String  @id @default(auto()) @map("_id") @db.ObjectId
+  DatasetEndTime                   String
+  DatasetStartTime                 String
+  Date_Created                     String? @map("Date Created")
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  ID                               Json?
+  Incident_S_A                     String  @map("Incident S/A")
+  Incident_Type                    String? @map("Incident Type")
+  Subject_Level_1                  String  @map("Subject Level 1")
+  TOTAL_EDIT_TIME                  Int     @map("TOTAL EDIT TIME")
+  Talk_Time                        Int     @map("Talk Time")
+  Target_Name                      String  @map("Target Name")
+  Ticket__                         String? @map("Ticket #")
+  abandoned_month                  Int
+  abandoned_nw_month               Int
+  abandoned_nw_total               Int
+  abandoned_regular_month          Int
+  abandoned_regular_total          Int
+  abandoned_total                  Int
+  analyst                          String
+  month                            String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  month_ms                         Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  nAnalyst                         Json?
+  talkHours                        Float
+  /// Multiple data types found: Float: 98%, Int: 2% out of 1000 sampled entries
+  talkMinutes                      Json
+  talkSecs                         Int
+  ticketSummary_Role               String?
+  /// Multiple data types found: Float: 91.6%, Int: 8.4% out of 1000 sampled entries
+  ticketSummary_daysWorkPerCall    Json
+  ticketSummary_dayswork           Float?
+  /// Multiple data types found: Float: 88.6%, Int: 11.4% out of 1000 sampled entries
+  ticketSummary_hoursPerCall       Json
+  /// Multiple data types found: Float: 88.6%, Int: 11.4% out of 1000 sampled entries
+  ticketSummary_minutesPerCall     Json
+  /// Multiple data types found: Float: 91.6%, Int: 8.4% out of 1000 sampled entries
+  ticketSummary_rawSecsPerCall     Json
+  /// Multiple data types found: Float: 91.6%, Int: 8.4% out of 1000 sampled entries
+  ticketSummary_rawSecsPerCall_100 Json
+  /// Multiple data types found: Float: 88.6%, Int: 11.4% out of 1000 sampled entries
+  ticketSummary_secsPerCall        Json
+  ticketSummary_tacttime           Int?
+  ticketSummary_tcreated           Int?
+  ticketSummary_tixxday            Int?
+  ticketSummary_tworked            Int?
+  ticketSummary_utilization        Float
+  /// Multiple data types found: Float: 99.9%, Int: 0.1% out of 1000 sampled entries
+  waitHours                        Json
+  /// Multiple data types found: Float: 99.2%, Int: 0.8% out of 1000 sampled entries
+  waitMinutes                      Json
+  workHours                        Float
+  workHours_100                    Float
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAbandonmentRate                 Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAnalystAggregateUtilization     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAnalystsAdjusted                Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xArrivalRate                     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAverageHandleTime               Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xConcurrentUpperBound            Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xConcurrentWorkingAnalysts       Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xDailyHandlingTimePerAnalyst     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xPatience                        Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xProjectedWaitTime               Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xTotalUpperBound                 Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xTrafficIntensity                Json?
+}
+
+model CallsWithTicketsAll {
+  id                               String  @id @default(auto()) @map("_id") @db.ObjectId
+  DatasetEndTime                   String
+  DatasetStartTime                 String
+  Date_Created                     String? @map("Date Created")
+  ID                               String?
+  Incident_S_A                     String  @map("Incident S/A")
+  Incident_Type                    String? @map("Incident Type")
+  Median_Edit_Time                 Int?    @map("Median Edit Time")
+  Subject_Level_1                  String  @map("Subject Level 1")
+  TOTAL_EDIT_TIME                  Int     @map("TOTAL EDIT TIME")
+  /// Multiple data types found: String: 6.9%, Int: 93.1% out of 1000 sampled entries
+  Talk_Time                        Json    @map("Talk Time")
+  Target_Name                      String  @map("Target Name")
+  Ticket__                         String? @map("Ticket #")
+  abandoned_month                  Int
+  abandoned_nw_month               Int
+  abandoned_nw_total               Int
+  abandoned_regular_month          Int
+  abandoned_regular_total          Int
+  abandoned_total                  Int
+  /// Multiple data types found: Float: 84.5%, Int: 15.5% out of 1000 sampled entries
+  actual_month                     Json?
+  analyst                          String
+  /// Multiple data types found: Float: 86.1%, Int: 13.9% out of 1000 sampled entries
+  estimate_month                   Json?
+  month                            String
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  month_ms                         Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  nAnalyst                         Json?
+  talkHours                        Float
+  /// Multiple data types found: Float: 98.1%, Int: 1.9% out of 1000 sampled entries
+  talkMinutes                      Json
+  talkSecs                         Int
+  ticketSummary_Role               String
+  /// Multiple data types found: Float: 96.7%, Int: 3.3% out of 1000 sampled entries
+  ticketSummary_daysWorkPerCall    Json
+  ticketSummary_dayswork           String?
+  /// Multiple data types found: Float: 96%, Int: 4% out of 1000 sampled entries
+  ticketSummary_hoursPerCall       Json
+  /// Multiple data types found: Float: 96%, Int: 4% out of 1000 sampled entries
+  ticketSummary_minutesPerCall     Json
+  /// Multiple data types found: Float: 96.6%, Int: 3.4% out of 1000 sampled entries
+  ticketSummary_rawSecsPerCall     Json
+  /// Multiple data types found: Float: 96.6%, Int: 3.4% out of 1000 sampled entries
+  ticketSummary_rawSecsPerCall_100 Json
+  /// Multiple data types found: Float: 95.9%, Int: 4.1% out of 1000 sampled entries
+  ticketSummary_secsPerCall        Json
+  ticketSummary_tacttime           String?
+  ticketSummary_tcreated           String?
+  ticketSummary_tixxday            String?
+  ticketSummary_tworked            String?
+  /// Multiple data types found: Float: 96.7%, Int: 3.3% out of 1000 sampled entries
+  ticketSummary_utilization        Json
+  /// Multiple data types found: Float: 99.9%, Int: 0.1% out of 1000 sampled entries
+  waitHours                        Json
+  /// Multiple data types found: Float: 98.4%, Int: 1.6% out of 1000 sampled entries
+  waitMinutes                      Json
+  workHours                        Float
+  workHours_100                    Float
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAbandonmentRate                 Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAnalystAggregateUtilization     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAnalystsAdjusted                Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xArrivalRate                     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xAverageHandleTime               Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xConcurrentLowerBound            Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xConcurrentUpperBound            Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xConcurrentWorkingAnalysts       Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xDailyHandlingTimePerAnalyst     Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xEstimateDiff                    Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xPatience                        Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xProjectedWaitTime               Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xTotalLowerBound                 Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xTotalUpperBound                 Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xTrafficIntensity                Json?
+  /// Could not determine type: the field only had null or empty values in the sample set.
+  xUtilization                     Json?
+}
+
+model Cambridge_PE_DPI_31Mar2018 {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  Arithmetic_Mean String @map("Arithmetic Mean")
+  Lower_Quartile  String @map("Lower Quartile")
+  Median          String
+  Number_of_Funds String @map("Number of Funds")
+  Pooled_Return   String @map("Pooled Return")
+  Upper_Quartile  String @map("Upper Quartile")
+  Vintage_Year    String @map("Vintage Year")
+}
+
+model Cambridge_PE_IRR_31Mar2018 {
+  id                               String @id @default(auto()) @map("_id") @db.ObjectId
+  Arithmetic_Mean____              String @map("Arithmetic Mean (%)")
+  DPI                              String
+  Equal_Weighted_Pooled_Return____ String @map("Equal-Weighted Pooled Return (%)")
+  Lower_Quartile____               String @map("Lower Quartile (%)")
+  Median____                       String @map("Median (%)")
+  Number_of_Funds                  String @map("Number of Funds")
+  Pooled_Return____                String @map("Pooled Return (%)")
+  RVPI                             String
+  Standard_Deviation____           String @map("Standard Deviation (%)")
+  TVPI                             String
+  Upper_Quartile____               String @map("Upper Quartile (%)")
+  Vintage_Year                     String @map("Vintage Year")
+}
+
+model Cambridge_PE_RVPI_31Mar2018 {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  Pooled_Return String @map("Pooled Return")
+  Vintage_Year  String @map("Vintage Year")
+}
+
+model Cambridge_PE_TVPI_31Mar2018 {
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  Arithmetic_Mean String @map("Arithmetic Mean")
+  Lower_Quartile  String @map("Lower Quartile")
+  Median          String
+  Number_of_Funds String @map("Number of Funds")
+  Pooled_Return   String @map("Pooled Return")
+  Upper_Quartile  String @map("Upper Quartile")
+  Vintage_Year    String @map("Vintage Year")
+}
+
+model Cambridge_VC_IRR_31Dec2017 {
+  id                               String @id @default(auto()) @map("_id") @db.ObjectId
+  Arithmetic_Mean____              String @map("Arithmetic Mean (%)")
+  DPI                              String
+  Equal_Weighted_Pooled_Return____ String @map("Equal-Weighted Pooled Return (%)")
+  Lower_Quartile____               String @map("Lower Quartile (%)")
+  Median____                       String @map("Median (%)")
+  Number_of_Funds                  String @map("Number of Funds")
+  Pooled_Return____                String @map("Pooled Return (%)")
+  RVPI                             String
+  Standard_Deviation____           String @map("Standard Deviation (%)")
+  TVPI                             String
+  Upper_Quartile____               String @map("Upper Quartile (%)")
+  Vintage_Year                     String @map("Vintage Year")
+}
+
+model Connected_Calls_FY19_Q1 {
+  id                String                   @id @default(auto()) @map("_id") @db.ObjectId
+  Acct_Code         String                   @map("Acct Code")
+  Callee_Department String                   @map("Callee Department")
+  Caller_Department String                   @map("Caller Department")
+  Caller_ID         String                   @map("Caller ID")
+  Caller_Name       String                   @map("Caller Name")
+  Conf              ConnectedCallsFy19Q1Conf
+  DNIS              String
+  Date              String
+  Duration          String
+  Exit_State        String                   @map("Exit State")
+  ID                String
+  IVR_Data          String                   @map("IVR Data")
+  Message_Duration  String                   @map("Message Duration")
+  Others_Time       String                   @map("Others Time")
+  Seq               ConnectedCallsFy19Q1Seq
+  Session_ID        String                   @map("Session ID")
+  Talk_Time         String                   @map("Talk Time")
+  Target_ID         String                   @map("Target ID")
+  Target_Name       String                   @map("Target Name")
+  Time              String
+  URL               String
+  User_Data         String                   @map("User Data")
+  Wait_Time         String                   @map("Wait Time")
+
+  @@map("Connected Calls FY19 Q1")
+}
+
+model ConnectedCallsJun_Aug2021 {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  Date             String
+  Duration         String
+  Message_Duration String @map("Message Duration")
+  Others_Time      String @map("Others Time")
+  Talk_Time        String @map("Talk Time")
+  Time             String
+  Wait_Time        String @map("Wait Time")
+  callname         String
+  exitstate        String
+  targetid         String
+  targname         String
+
+  @@map("ConnectedCallsJun-Aug2021")
+}
+
+model DoD_Preferred_Lodging_ILP_Documents_for_SPO_2021_DoD_Preferred_Commercial_Lodging_List_V_for_Karin_and_R_Process_20210607 {
+  id                               String @id @default(auto()) @map("_id") @db.ObjectId
+  Address                          String
+  Commercial_Lodging_Property_Name String @map("Commercial Lodging Property Name")
+  field3                           String
+  field4                           String
+  field5                           String
+
+  @@map("DoD Preferred Lodging_ILP Documents for SPO_2021_DoD Preferred Commercial Lodging List_V for Karin and R Process_20210607")
+}
+
+model FY11Accessions {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  CUSTOMER                    String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  STREET                      String
+  ZIP                         String
+}
+
+model FY11Accessions_small {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  CUSTOMER                    String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  STREET                      String
+  ZIP                         String
+
+  @@map("FY11Accessions-small")
+}
+
+model HARPs {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  Address             String
+  Chain               String
+  Classification      String
+  Group               String
+  Harp_Number         String @map("Harp Number")
+  Hotel_Name          String @map("Hotel Name")
+  N_Rows              String @map("N Rows")
+  Number_of_Rooms     String @map("Number of Rooms")
+  Postal_City         String @map("Postal City")
+  State               String
+  X___Longitude__E_W_ String @map("X = Longitude (E/W)")
+  Y___Latitude__N_S_  String @map("Y = Latitude (N/S)")
+  Zip_Code            String @map("Zip Code")
+}
+
+model HarpNumbers {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  Address             String
+  Chain               String
+  Classification      String
+  Group               String
+  Harp_Number         String @map("Harp Number")
+  Hotel_Name          String @map("Hotel Name")
+  N_Rows              String @map("N Rows")
+  Number_of_Rooms     String @map("Number of Rooms")
+  Postal_City         String @map("Postal City")
+  State               String
+  X___Longitude__E_W_ String @map("X = Longitude (E/W)")
+  Y___Latitude__N_S_  String @map("Y = Latitude (N/S)")
+  Zip_Code            String @map("Zip Code")
+}
+
+model Metro_Area_State_Map {
+  id                       String @id @default(auto()) @map("_id") @db.ObjectId
+  City_State               String
+  METRO_AREA_STATE__Q10_1_ String @map("METRO_AREA_STATE (Q10_1)")
+  VENDOR__Q5_1_            String @map("VENDOR (Q5_1)")
+
+  @@map("Metro Area State Map")
+}
+
+model NormalizedAddresses {
+  id                               String @id @default(auto()) @map("_id") @db.ObjectId
+  Address                          String
+  City                             String
+  Commercial_Lodging_Property_Name String @map("Commercial Lodging Property Name")
+  Group                            String
+  Harp_Number                      String @map("Harp Number")
+  Property_Missing_                String @map("Property Missing?")
+  State                            String
+  Zip                              String
+  address_clean                    String
+  address_dirty                    String
+  dataset                          String
+  property_clean                   String
+  rowno                            String
+  zip_clean                        String
+}
+
+model Oct_Dec__2018__TTA {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  Date             String
+  Duration         String
+  Exit_State       String @map("Exit State")
+  Message_Duration String @map("Message Duration")
+  Others_Time      String @map("Others Time")
+  Talk_Time        String @map("Talk Time")
+  Time             String
+  Wait_Time        String @map("Wait Time")
+
+  @@map("Oct-Dec, 2018, TTA")
+}
+
+model Preqin_PE_Global_31Dec2018 {
+  id                            String @id @default(auto()) @map("_id") @db.ObjectId
+  IRR_____Max                   String @map("IRR (%) Max")
+  IRR_____Min                   String @map("IRR (%) Min")
+  IRR_Quartiles_____Median      String @map("IRR Quartiles (%) Median")
+  IRR_Quartiles_____Q1          String @map("IRR Quartiles (%) Q1")
+  IRR_Quartiles_____Q3          String @map("IRR Quartiles (%) Q3")
+  Median_Fund_Called____        String @map("Median Fund Called (%)")
+  Median_Fund_Dist_____DPI      String @map("Median Fund Dist (%) DPI")
+  Median_Fund_Value_____RVPI    String @map("Median Fund Value (%) RVPI")
+  Multiple_Quartiles__X__Median String @map("Multiple Quartiles (X) Median")
+  Multiple_Quartiles__X__Q1     String @map("Multiple Quartiles (X) Q1")
+  Multiple_Quartiles__X__Q3     String @map("Multiple Quartiles (X) Q3")
+  No_of_Funds                   String @map("No of Funds")
+  Vintage                       String
+}
+
+model Preqin_PE_Pooled_IRR_31Dec2018 {
+  id                           String @id @default(auto()) @map("_id") @db.ObjectId
+  Europe_Pooled_IRR____        String @map("Europe Pooled IRR (%)")
+  Global_Pooled_IRR____        String @map("Global Pooled IRR (%)")
+  North_America_Pooled_IRR____ String @map("North America Pooled IRR (%)")
+  Vintage                      String
+}
+
+model Preqin_VC_Global_31Dec2018 {
+  id                            String @id @default(auto()) @map("_id") @db.ObjectId
+  IRR_____Max                   String @map("IRR (%) Max")
+  IRR_____Min                   String @map("IRR (%) Min")
+  IRR_Quartiles_____Median      String @map("IRR Quartiles (%) Median")
+  IRR_Quartiles_____Q1          String @map("IRR Quartiles (%) Q1")
+  IRR_Quartiles_____Q3          String @map("IRR Quartiles (%) Q3")
+  Median_Fund_Called____        String @map("Median Fund Called (%)")
+  Median_Fund_Dist_____DPI      String @map("Median Fund Dist (%) DPI")
+  Median_Fund_Value_____RVPI    String @map("Median Fund Value (%) RVPI")
+  Multiple_Quartiles__X__Median String @map("Multiple Quartiles (X) Median")
+  Multiple_Quartiles__X__Q1     String @map("Multiple Quartiles (X) Q1")
+  Multiple_Quartiles__X__Q3     String @map("Multiple Quartiles (X) Q3")
+  No_of_Funds                   String @map("No of Funds")
+  Vintage                       String
+}
+
+model Preqin_VC_Pooled_IRR_31Dec2018 {
+  id                   String                       @id @default(auto()) @map("_id") @db.ObjectId
+  Called____           String                       @map("Called (%)")
+  Dist_____DPI         String                       @map("Dist (%) DPI")
+  Multiple__X__IRR____ String                       @map("Multiple (X) IRR (%)")
+  No                   PreqinVcPooledIrr31Dec2018No
+  Value_____RVPI       String                       @map("Value (%) RVPI")
+  Vintage              String
+  field7               String
+}
+
+model Report_Input_File {
+  id                       String @id @default(auto()) @map("_id") @db.ObjectId
+  Count_of_Record_ID       String @map("Count of Record ID")
+  GROUP                    String
+  HARP_NUMBER              String @map("HARP NUMBER")
+  Likert_Score             String @map("Likert Score")
+  METRO_AREA_STATE__Q10_1_ String @map("METRO_AREA_STATE (Q10_1)")
+  Question_Column          String @map("Question Column")
+  Question_ID              String @map("Question ID")
+  Score____                String @map("Score (#)")
+  Score_Label              String @map("Score Label")
+  VENDOR__Q5_1_            String @map("VENDOR (Q5_1)")
+  Weighted_Likert          String @map("Weighted Likert")
+}
+
+model SPY_prices {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  Date  String
+  Value String
+
+  @@map("SPY-prices")
+}
+
+model SPY_yields {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  Date  String
+  Value String
+
+  @@map("SPY-yields")
+}
+
+model TTAJun_Aug2021 {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  Duration         String
+  Message_Duration String @map("Message Duration")
+  Others_Time      String @map("Others Time")
+  Talk_Time        String @map("Talk Time")
+  Time             String
+  Wait_Time        String @map("Wait Time")
+  calldate         String
+  exitstate        String
+
+  @@map("TTAJun-Aug2021")
+}
+
+model TicketSummaryFY19Q1 {
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  Utilization        String @map("% Utilization")
+  Month              String
+  Period             String
+  Role               String
+  Tix_time__minutes_ String @map("Tix time (minutes)")
+  Total_Minutes      String @map("Total Minutes")
+  Total_hours_worked String @map("Total hours worked")
+  analyst            String
+  dayswork           String
+  tacttime           String
+  tcreated           String
+  tixxday            String
+  tworked            String
+}
+
+model TicketSummaryJun_Aug2021 {
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  Days_worked        String @map("Days worked")
+  Display_Name       String @map("Display Name")
+  Month              String
+  Period             String
+  Role               String
+  TACTTIME           String
+  TACTTIME_minutes_  String @map("TACTTIME(minutes)")
+  Ticket_Utilization String @map("Ticket Utilization")
+  Tickets_Created    String @map("Tickets Created")
+  Tickets_Per_Day    String @map("Tickets Per Day")
+  Tickets_Worked     String @map("Tickets Worked")
+  Total_Hours        String @map("Total Hours")
+  Total_Minutes      String @map("Total Minutes")
+
+  @@map("TicketSummaryJun-Aug2021")
+}
+
+model TicketWithSubjectTree {
+  id                    String @id @default(auto()) @map("_id") @db.ObjectId
+  Assigned_Account      String @map("Assigned Account")
+  Date_Closed           String @map("Date Closed")
+  Date_Created          String @map("Date Created")
+  Incident_S_A          String @map("Incident S/A")
+  Incident_Site         String @map("Incident Site")
+  Incident_Type         String @map("Incident Type")
+  Subject_Level_1       String @map("Subject Level 1")
+  Subject_Level_2       String @map("Subject Level 2")
+  Subject_Level_3       String @map("Subject Level 3")
+  /// Multiple data types found: String: 0.2%, Int: 99.8% out of 1000 sampled entries
+  TOTAL_EDIT_TIME       Json   @map("TOTAL EDIT TIME")
+  Ticket__              String @map("Ticket #")
+  /// Multiple data types found: Float: 31.6%, Int: 68.4% out of 1000 sampled entries
+  Time_to_Close__Hours_ Json   @map("Time to Close (Hours)")
+}
+
+model TicketWithSubjectTreeFY19Q1 {
+  id                    String @id @default(auto()) @map("_id") @db.ObjectId
+  Assigned_Account      String @map("Assigned Account")
+  Date_Closed           String @map("Date Closed")
+  Date_Created          String @map("Date Created")
+  Incident_S_A          String @map("Incident S/A")
+  Incident_Site         String @map("Incident Site")
+  Incident_Type         String @map("Incident Type")
+  Subject_Level_1       String @map("Subject Level 1")
+  Subject_Level_2       String @map("Subject Level 2")
+  Subject_Level_3       String @map("Subject Level 3")
+  TOTAL_EDIT_TIME       String @map("TOTAL EDIT TIME")
+  Ticket__              String @map("Ticket #")
+  Time_to_Close__Hours_ String @map("Time to Close (Hours)")
+}
+
+model TicketWithSubjectTreeOrig {
+  id                    String @id @default(auto()) @map("_id") @db.ObjectId
+  Assigned_Account      String @map("Assigned Account")
+  Date_Closed           String @map("Date Closed")
+  Date_Created          String @map("Date Created")
+  Incident_S_A          String @map("Incident S/A")
+  Incident_Site         String @map("Incident Site")
+  Incident_Type         String @map("Incident Type")
+  Subject_Level_1       String @map("Subject Level 1")
+  Subject_Level_2       String @map("Subject Level 2")
+  Subject_Level_3       String @map("Subject Level 3")
+  Ticket__              String @map("Ticket #")
+  Time_to_Close__Hours_ String @map("Time to Close (Hours)")
+}
+
+model TicketWithSubjectTreeSmall {
+  id                    String @id @default(auto()) @map("_id") @db.ObjectId
+  Assigned_Account      String @map("Assigned Account")
+  Date_Closed           String @map("Date Closed")
+  Date_Created          String @map("Date Created")
+  Incident_S_A          String @map("Incident S/A")
+  Incident_Site         String @map("Incident Site")
+  Incident_Type         String @map("Incident Type")
+  Subject_Level_1       String @map("Subject Level 1")
+  Subject_Level_2       String @map("Subject Level 2")
+  Subject_Level_3       String @map("Subject Level 3")
+  Ticket__              String @map("Ticket #")
+  /// Multiple data types found: Float: 58.6%, Int: 41.4% out of 99 sampled entries
+  Time_to_Close__Hours_ Json   @map("Time to Close (Hours)")
+}
+
+model TicketsWithSubjectTreeJun_Aug2021 {
+  id                    String @id @default(auto()) @map("_id") @db.ObjectId
+  Assigned_Account      String @map("Assigned Account")
+  Date_Closed           String @map("Date Closed")
+  Date_Created          String @map("Date Created")
+  Incident_S_A          String @map("Incident S/A")
+  Incident_Site         String @map("Incident Site")
+  Incident_Type         String @map("Incident Type")
+  Subject_Level_1       String @map("Subject Level 1")
+  Subject_Level_2       String @map("Subject Level 2")
+  Subject_Level_3       String @map("Subject Level 3")
+  TOTAL_EDIT_TIME       String @map("TOTAL EDIT TIME")
+  Ticket__              String @map("Ticket #")
+  Time_to_Close__Hours_ String @map("Time to Close (Hours)")
+
+  @@map("TicketsWithSubjectTreeJun-Aug2021")
+}
+
+model arrow {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+}
+
+model bolliger_mabillard {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+
+  @@map("bolliger-mabillard")
+}
+
+model gerstlauer {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+}
+
+model intamin {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+}
+
+model liver_lab_panel_analyses_1 {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  ARM_1               String
+  ARM_2               String
+  ARM_SUBJECT_COUNT_1 String
+  ARM_SUBJECT_COUNT_2 String
+  EVENTS_1            String
+  EVENTS_2            String
+  LBCOMPARISON        String
+  LBTESTCD            String
+  SUBJECTS_1          String
+  SUBJECTS_2          String
+  SUBJECT_PERCENT_1   String
+  SUBJECT_PERCENT_2   String
+}
+
+model liver_lab_panel_analyses_2_1 {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  ARM_1               String
+  ARM_2               String
+  ARM_SUBJECT_COUNT_1 String
+  ARM_SUBJECT_COUNT_2 String
+  EVENTS_1            String
+  EVENTS_2            String
+  LBCOMPARISON        String
+  SUBJECTS_1          String
+  SUBJECTS_2          String
+}
+
+model liver_lab_panel_analyses_2_2 {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  ARM_1               String
+  ARM_2               String
+  ARM_SUBJECT_COUNT_1 String
+  ARM_SUBJECT_COUNT_2 String
+  LBCOMPARISON        String
+  SUBJECTS_1          String
+  SUBJECTS_2          String
+}
+
+model liver_lab_panel_analyses_3 {
+  id                  String @id @default(auto()) @map("_id") @db.ObjectId
+  ARM_1               String
+  ARM_2               String
+  ARM_SUBJECT_COUNT_1 String
+  ARM_SUBJECT_COUNT_2 String
+  BL_BT_10_20_SC_1    String
+  BL_BT_10_20_SC_2    String
+  BL_BT_2_5_SC_1      String
+  BL_BT_2_5_SC_2      String
+  BL_BT_5_10_SC_1     String
+  BL_BT_5_10_SC_2     String
+  BL_GE_20_SC_1       String
+  BL_GE_20_SC_2       String
+  BL_LT_2_SC_1        String
+  BL_LT_2_SC_2        String
+  LBMAXRANGE          String
+  LBTESTCD            String
+}
+
+model liver_lab_panel_analyses_4 {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  ALT_LBSTRESN String
+  ARM          String
+  AST_LBSTRESN String
+  TB_LBSTRESN  String
+  USUBJID      String
+}
+
+model liver_lab_panel_analyses_5 {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  ALP_LBSTRESN String
+  ALT_LBSTRESN String
+  ARM          String
+  AST_LBSTRESN String
+  LBDY_        String
+  TB_LBSTRESN  String
+}
+
+model maurer_sohne {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+
+  @@map("maurer-sohne")
+}
+
+model medra_short_v2 {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+
+  @@map("medra-short-v2")
+}
+
+model medra_small {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+
+  @@map("medra-small")
+}
+
+model medra_tiny {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+
+  @@map("medra-tiny")
+}
+
+model medra_ae_hm {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  A          String
+  AEBODSYS   String
+  AEDECOD    String
+  AEHLGT     String
+  AEHLT      String
+  APLUSB     String
+  B          String
+  C          String
+  CPLUSD     String
+  D          String
+  N          String
+  PCTCONTROL String
+  PCTTREAT   String
+  PVALUE     String
+  RD         String
+  RR         String
+}
+
+model morgan {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+}
+
+model queue171 {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  Column1 String
+  Column2 String
+  Column3 String
+  Column4 String
+  Column5 String
+  Column6 String
+  Column7 String
+  Column8 String
+  Column9 String
+  Time    String
+}
+
+model schwarzkopf {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+}
+
+model test1 {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  CUSTOMER                    String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  STREET                      String
+  ZIP                         String
+}
+
+model test10 {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  ZIP                         String
+}
+
+model test100 {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  CUSTOMER                    String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  STREET                      String
+  ZIP                         String
+}
+
+model test1000 {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  ZIP                         String
+}
+
+model test2 {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  CUSTOMER                    String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  STREET                      String
+  ZIP                         String
+}
+
+model test3 {
+  id                          String @id @default(auto()) @map("_id") @db.ObjectId
+  APPLICBRANCH_CD             String
+  APPLICLEADORIGIN_CD         String
+  APPLICLEADORIGIN_CD_DSP     String
+  APPLICLEADSOURCECODE_CD     String
+  APPLICLEADSOURCECODE_CD_DSP String
+  CITY                        String
+  CREATE_DT                   String
+  CURSTATUS_CD                String
+  CUSTOMER                    String
+  GAINSTATUS_CD               String
+  GAIN_DT                     String
+  GENDER                      String
+  LEADTYPE_CD                 String
+  RACE                        String
+  RC_DESKFILE_OID             String
+  STATE                       String
+  STREET                      String
+  ZIP                         String
+}
+
+model vekoma {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  country    String
+  duration   String
+  height     String
+  inversions String
+  latitude   String
+  length     String
+  longitude  String
+  name       String
+  opened     String
+  park       String
+  park_url   String
+  speed      String
+  type       String
+  url        String
+}
